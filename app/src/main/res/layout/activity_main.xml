@@ -26,12 +26,18 @@
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_alignParentBottom="true"
+        android:background="?attr/selectableItemBackground"
         android:orientation="horizontal">
+
+        <!--
+        设置给RadioGroup，使水波纹不会超出其边界
+        android:background="?attr/selectableItemBackground"
+
+        -->
 
         <RadioButton
             android:id="@+id/radio_btn_discover"
             style="@style/RadioBtn_style"
-            android:checked="true"
             android:drawableTop="@drawable/discover_selector"
             android:text="@string/discover"
             />

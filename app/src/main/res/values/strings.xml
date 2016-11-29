@@ -6,4 +6,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="classify_find">分类查找</string>
+    <string name="daily_card">每日电影卡片</string>
+    <string name="hot_movie">影院热映</string>
 </resources>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/dis_item_type4_relative"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+    >
+
+    <View
+        android:id="@+id/item_divider"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/divider_gray"
+
+        />
+
+    <ImageView
+        android:id="@+id/dis_item_type4_image"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/item_divider"
+        android:src="@mipmap/ic_launcher"/>
+
+    <ImageView
+        android:id="@+id/dis_item_type4_new"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/item_divider"
+        android:src="@mipmap/discover_new_icon"
+        />
+
+    <TextView
+        android:id="@+id/dis_item_type4_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dis_item_type4_image"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:padding="3dp"
+        android:text="一部让人眼泪决堤的亲情电影"/>
+
+    <TextView
+        android:id="@+id/dis_item_type4_catname"
+        android:layout_width="wrap_content"
+        android:layout_height="14dp"
+        android:layout_alignTop="@+id/dis_item_type4_divider"
+        android:layout_toLeftOf="@+id/dis_item_type4_divider"
+        android:text="# 剧情"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="10sp"/>
+
+    <View
+        android:id="@+id/dis_item_type4_divider"
+        android:layout_width="1px"
+        android:layout_height="14dp"
+        android:layout_below="@id/dis_item_type4_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/darker_gray"
+        ></View>
+
+    <ImageView
+        android:id="@+id/dis_item_type4_like"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_alignTop="@+id/dis_item_type4_divider"
+        android:layout_marginRight="3dp"
+        android:layout_toRightOf="@+id/dis_item_type4_divider"
+        android:src="@mipmap/discover_like_unchecked"/>
+
+    <TextView
+        android:id="@+id/dis_item_type4_like_count"
+        android:layout_width="wrap_content"
+        android:layout_height="14dp"
+        android:layout_alignTop="@id/dis_item_type4_divider"
+        android:layout_toRightOf="@+id/dis_item_type4_like"
+        android:gravity="center"
+        android:text="378"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="10sp"/>
+</RelativeLayout>

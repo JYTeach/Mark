@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="120dp"
+              android:orientation="horizontal"
+              android:descendantFocusability="blocksDescendants"
+             >
+
+    <Button
+        android:id="@+id/dis_item_type2_left"
+        android:layout_width="0dp"
+        android:layout_gravity="center_vertical"
+        android:layout_height="match_parent"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/classify_find_layer"
+        android:gravity="center"
+        android:text="@string/classify_find"
+        />
+
+    <Button
+        android:id="@+id/dis_item_type2_center"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/daily_card_layer"
+        android:gravity="center"
+        android:text="@string/daily_card"/>
+
+    <Button
+        android:id="@+id/dis_item_type2_right"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/cinema_layer"
+        android:gravity="center"
+        android:text="@string/hot_movie"/>
+</LinearLayout>

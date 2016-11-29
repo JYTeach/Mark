@@ -1,10 +1,11 @@
 package brandy.mark;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.widget.FrameLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import org.xutils.view.annotation.ContentView;
@@ -20,22 +21,26 @@ import brandy.mark.fragments.UserFragment;
 public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener {
     @ViewInject(R.id.topbar)
     private TopBar mTopBar;
-    @ViewInject(R.id.main_container)
-    private FrameLayout mContainer;
     @ViewInject(R.id.main_radioGroup)
     private RadioGroup mRadioGroup;
+    @ViewInject(R.id.radio_btn_discover)
+    private RadioButton mDiscover;
 
     private Fragment mShowFragment;
+    private Resources mResources;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mResources = getResources();
 
         initView();
     }
 
     private void initView() {
         mRadioGroup.setOnCheckedChangeListener(this);
+        mDiscover.setChecked(true);
     }
 
     @Override
@@ -43,13 +48,27 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         switch (checkedId) {
             case R.id.radio_btn_discover:
                 changeFragment(DiscoverFragment.class, DiscoverFragment.TAG);
+                changeTopBar(R.string.discover, 0, false, R.mipmap.movie_search_icon, true, 0, false);
                 break;
             case R.id.radio_btn_my_movie:
                 changeFragment(MyMovieFragment.class, MyMovieFragment.TAG);
                 break;
             case R.id.radio_btn_user:
                 changeFragment(UserFragment.class, UserFragment.TAG);
+                changeTopBar(R.string.user, 0, false, R.mipmap.setting_icon, true, 0, false);
                 break;
+        }
+    }
+
+    private void changeTopBar(int titleResId, int imageLeftResId, boolean isImageLeftShow
+            , int imageRightResId, boolean isImageRightShow, int textRightResId, boolean isTextRightShow) {
+        if (titleResId != 0) {
+            mTopBar.setTitle(mResources.getString(titleResId), true);
+        }
+        mTopBar.setImageLeft(imageLeftResId, isImageLeftShow);
+        mTopBar.setImageRight(imageRightResId, isImageRightShow);
+        if (textRightResId != 0) {
+            mTopBar.setTextRight(mResources.getString(textRightResId), isTextRightShow);
         }
     }
 
@@ -75,6 +94,8 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
+        } else {
+            transaction.show(mShowFragment);
         }
 
         transaction.commit();

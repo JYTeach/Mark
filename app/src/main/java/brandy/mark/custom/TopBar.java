@@ -83,4 +83,15 @@ public class TopBar extends Toolbar {
         mTextRight.setOnClickListener(listener);
     }
 
+    public void setTitle(CharSequence text, boolean isVisibility) {
+        if (isVisibility) {
+            mTitle.setVisibility(VISIBLE);
+            mTitle.setText(text);
+        } else {
+            mTitle.setVisibility(GONE);
+            mTitle.setText("");
+        }
+    }
+
+
 }

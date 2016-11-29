@@ -31,4 +31,5 @@ dependencies {
     compile 'com.zhy:okhttputils:2.6.2'
     compile 'org.xutils:xutils:3.3.38'
     compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.google.code.gson:gson:2.8.0'
 }
