@@ -16,4 +16,10 @@
         <item name="android:button">@null</item>
         <item name="android:gravity">center</item>
     </style>
+
+    <style name="ratingBar_style" parent="Base.Widget.AppCompat.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingbar_layer</item>
+        <item name="android:minHeight">25dp</item>
+        <item name="android:maxHeight">25dp</item>
+    </style>
 </resources>

@@ -27,6 +27,7 @@ import org.xutils.view.annotation.ViewInject;
 
 import java.util.List;
 
+import brandy.mark.AllMovieListActivity;
 import brandy.mark.App;
 import brandy.mark.MovieDetailActivity;
 import brandy.mark.R;
@@ -245,6 +246,7 @@ public class DiscoverFragment extends BaseFragment implements SwipeRefreshLayout
         if (tag == -1) {
             //分类查找按钮
             ToastUtils.showToast(getActivity(), "分类查找");
+            startActivity(new Intent(getActivity(), AllMovieListActivity.class));
         } else if (tag == -2) {
             //每日电影卡片按钮
             ToastUtils.showToast(getActivity(), "每日电影卡片");
@@ -256,16 +258,20 @@ public class DiscoverFragment extends BaseFragment implements SwipeRefreshLayout
         } else {
             if (tag > 0) {
                 //movies
-                ToastUtils.showToast(getActivity(), "movies " + tag);
+//                ToastUtils.showToast(getActivity(), "movies " + tag);
 
                 Intent intent = new Intent(getActivity(), MovieDetailActivity.class);
                 //注意这里要将id转为String
-                intent.putExtra("id", mMovies.get(tag).getId()+"");
+                intent.putExtra("id", mMovies.get(tag).getId() + "");
                 startActivity(intent);
             } else {
                 //banners
                 if (mBanners.get(tag + mBanners.size() + 3).getType() == 1) {
                     //启动影单详情(webview)
+                    Intent intent = new Intent(getActivity(), MovieDetailActivity.class);
+                    intent.putExtra("id", mBanners.get(tag + mBanners.size() + 3).getId() + "");
+                    startActivity(intent);
+
                     ToastUtils.showToast(getActivity(), "启动影单详情 " + (tag + mBanners.size() + 3));
                 } else if (mBanners.get(tag + mBanners.size() + 3).getType() == 2) {
                     //启动热门影单(recyclerView)

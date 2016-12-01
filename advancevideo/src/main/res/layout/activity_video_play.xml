@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/activity_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="brandy.advancevideo.VideoPlayActivity">
+
+    <!--使用FrameLayout来包裹VideoView和控制条，
+         这样当横竖屏切换时，控制条能始终位于VideoView的底部-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <brandy.advancevideo.FullSizeVideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"/>
+
+        <LinearLayout
+            android:id="@+id/madia_controller"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="bottom"
+            android:background="#55ffffff"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/play"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:button="@null"
+                android:drawableRight="@drawable/play"
+                android:paddingRight="5dp"/>
+
+            <TextView
+                android:id="@+id/current_progress"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="00:00"/>
+
+            <SeekBar
+                android:id="@+id/seek_progress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/total_progress"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="00:00"/>
+
+            <CheckBox
+                android:id="@+id/full_screen"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:button="@null"
+                android:drawableLeft="@drawable/fullscreen"
+                android:paddingLeft="5dp"
+                />
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

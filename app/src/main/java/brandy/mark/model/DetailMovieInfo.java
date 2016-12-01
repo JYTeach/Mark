@@ -1,11 +1,15 @@
 package brandy.mark.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.List;
 
 /**
  * Created by lenovo on 2016/11/29.
  */
-public class DetailMovieInfo {
+public class DetailMovieInfo implements Parcelable{
+
     private String movie_id;
     private int db_num;
     private String name;
@@ -106,4 +110,53 @@ public class DetailMovieInfo {
     public void setClicktype(String clicktype) {
         this.clicktype = clicktype;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.movie_id);
+        dest.writeInt(this.db_num);
+        dest.writeString(this.name);
+        dest.writeString(this.img_url);
+        dest.writeString(this.pubdate);
+        dest.writeString(this.duration);
+        dest.writeString(this.genres);
+        dest.writeString(this.dbrating);
+        dest.writeString(this.is_done);
+        dest.writeString(this.clicktype);
+        dest.writeStringList(this.urls);
+    }
+
+    public DetailMovieInfo() {
+    }
+
+    protected DetailMovieInfo(Parcel in) {
+        this.movie_id = in.readString();
+        this.db_num = in.readInt();
+        this.name = in.readString();
+        this.img_url = in.readString();
+        this.pubdate = in.readString();
+        this.duration = in.readString();
+        this.genres = in.readString();
+        this.dbrating = in.readString();
+        this.is_done = in.readString();
+        this.clicktype = in.readString();
+        this.urls = in.createStringArrayList();
+    }
+
+    public static final Creator<DetailMovieInfo> CREATOR = new Creator<DetailMovieInfo>() {
+        @Override
+        public DetailMovieInfo createFromParcel(Parcel source) {
+            return new DetailMovieInfo(source);
+        }
+
+        @Override
+        public DetailMovieInfo[] newArray(int size) {
+            return new DetailMovieInfo[size];
+        }
+    };
 }

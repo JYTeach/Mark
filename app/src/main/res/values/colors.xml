@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#2f3240</color>
     <color name="colorAccent">#FFFFFF</color>
     <color name="divider_gray">#66b9b8b8</color>
+    <color name="light_blue">#6282ff</color>
+    <color name="back_gray">#aab9b8b8</color>
 </resources>

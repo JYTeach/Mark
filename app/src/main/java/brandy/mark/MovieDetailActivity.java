@@ -1,6 +1,7 @@
 package brandy.mark;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.util.Log;
@@ -161,7 +162,12 @@ public class MovieDetailActivity extends BaseActivity {
                 } else if (detailMovieInfo.getClicktype().equals("rightbtn")) {
 
                 } else if (detailMovieInfo.getClicktype().equals("img")) {
-//startActivity(new );
+                    //启动影单信息界面
+                    Intent intent = new Intent(MovieDetailActivity.this, MovieInfoActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putParcelable("detailMovieInfo", detailMovieInfo);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
                 } else if (detailMovieInfo.getClicktype().equals("stage_photo")) {
 
                 }

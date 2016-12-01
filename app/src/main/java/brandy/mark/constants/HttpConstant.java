@@ -11,5 +11,16 @@ public class HttpConstant {
 
     public static final String DIS_BANNERS = "http://api.markapp.cn/v160/singles/banner";
 
+    public static final String DIS_ALL_CAT = "http://api.markapp.cn/v160/singles/groupcat";
+
+    //电影详情
     public static final String MOVIE_DETAIL = "http://api.markapp.cn/mark_web/singles/detail";
+
+    //电影全部详情信息
+    public static final String MOVIE_DETAIL_INFO = "http://api.markapp.cn/v160/movies/";
+
+    //视频源
+    public static final String MOVIE_PLAY_SOURCE_1 = "http://api.markapp.cn/v160/movies/";
+    public static final String MOVIE_PLAY_SOURCE_2 = "/sourse";
+
 }
